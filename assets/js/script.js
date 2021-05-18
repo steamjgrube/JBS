@@ -15,16 +15,11 @@ function callApi () {
         var title = apiData.Search[0].Title;
         var year = apiData.Search[0].Year;
         var imdburl = "https://www.imdb.com/title/ " + apiData.Search[0].imdbID+"/";
-        var posterimg = "https://www.imdb.com/title/" + apiData.Search[0].Poster
-
-        document.getElementById('result').innerHTML="<h1>"+title+"</h1>"
-        
-    }
-    )}
         var posterimg = apiData.Search[0].Poster
 
         document.getElementById('movietitle').innerHTML="<h1>"+title+"</h1><br><br>"
         document.getElementById('result').innerHTML="<h2><img src="+posterimg+"></h2>"
+        document.getElementById('').innerHTML="<h3>"+title+"</h3>"
     })
     $.get(urlPlot, function (apiData) {
         console.log(apiData);
