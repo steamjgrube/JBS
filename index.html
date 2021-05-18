@@ -1,31 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Title</title>
 </head>
 <div id="container">
-    <div class="field">
-        <label class="label">Title Search</label>
-        <div class="control">
-          <input id="userQuery" class="input" type="text" placeholder="Text input">
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+            <div class="tile">
+                <div class="tile is-parent is-vertical">
+                    <article class="tile is-child notification is-primary">
+                        <p class="title">Search</p>
+                        <label class="label">Title Search</label>
+                        <div class="control">
+                            <input id="userQuery" class="input" type="text" placeholder="Text input">
+                        </div>
+                        <button id="searchBtn" class="button">Search</button>
+                    </article>
+                    <article class="tile is-child notification is-warning">
+                        <p class="title">Related Searches</p>
+                        <p class="subtitle">Titles related to your search here</p>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-info">
+                        <p class="title"></p>
+                        <p class="subtitle"></p>
+                        <figure id="result" class="image is-10by13">
+                        </figure>
+                    </article>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-danger">
+                    <p class="title">Streaming availability</p>
+                    <p class="subtitle">See where you can find your title streaming</p>
+                    <div class="content">
+                        <!-- Content -->
+                    </div>
+                </article>
+            </div>
         </div>
-        <button id="searchBtn" class="button">Search</button>
-        <p class="help">Enter the name of your title</p>
+        <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+                <div class="content">
+                    <p id="movietitle" class="title"></p>
+                    <p id="description" class="subtitle"></p>
+                    <div class="content">
+                        <!-- Content -->
+                    </div>
+                </div>
+            </article>
+        </div>
     </div>
     <div id="result"></div>
 </div>
+
 <body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-<script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
