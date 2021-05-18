@@ -4,6 +4,27 @@ let data;
 let apiKey = "&apikey=a9fe69df";
 var userInput = document.querySelector('#userQuery')
 
+$(document).ready(function() {
+    $('#streaming').hide();
+})
+$(document).ready(function() {
+    $('#stats').hide();
+})
+$(document).ready(function() {
+    $('#poster').hide();
+})
+$(document).ready(function() {
+    $('#related').hide();
+})
+$(document).ready(function() {
+    $('#searchBtn').on('click', function () {
+        $('#streaming').toggle();
+        $('#stats').toggle();
+        $('#poster').toggle();
+        $('#related').toggle();
+    })
+})
+
 function callApi () {
     var userSearchItem = userInput.value.trim()
     console.log(userSearchItem)
@@ -40,7 +61,7 @@ function callApi () {
 
         console.log(plot)
         document.getElementById('description').innerHTML="<p>"+plot+"</p>"
-        document.getElementById('actor').innerHTML="<h1>"+actors+"</h1>"
+        document.getElementById('actors').innerHTML="<h1>"+actors+"</h1>"
     })
     $.get(urlActors, function (apiData) {
         console.log(apiData);

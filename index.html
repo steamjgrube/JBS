@@ -11,69 +11,65 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Title</title>
 </head>
-<div id="container">
-    <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-            <div class="tile">
-                <div class="tile is-parent is-vertical">
-                    <article class="tile is-child notification is-primary">
-                        <p class="title">Search</p>
-                        <label class="label">Title Search</label>
-                        <div class="control">
-                            <input id="userQuery" class="input" type="text" placeholder="Text input">
-                        </div>
-                        <button id="searchBtn" class="button">Search</button>
-                    </article>
-                    <article class="tile is-child notification is-warning">
-                        <p class="title">Related Searches</p>
-                        <p class="subtitle">Titles related to your search here</p>
-                        <div class="columns">
-                            <div id="relatedsearch" class="column">
-                              
+<div class="hero-body">
+    <div id="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical has-text-centered">
+                        <article class="tile is-child notification is-primary">
+                            <p class="title">Search</p>
+                            <label class="label">Title Search</label>
+                            <div class="control">
+                                <input id="userQuery" class="input" type="text" placeholder="Text input">
                             </div>
-                            <div id="relatedsearch2" class="column">
-                              
+                            <button id="searchBtn" class="button">Search</button>
+                        </article>
+                        <article id="related" class="tile is-child notification is-warning">
+                            <p class="title">Related Searches</p>
+                            <p class="subtitle">Titles related to your search</p>
+                            <div class="columns">
+                                <div id="relatedsearch" class="column"></div>
+                                <div id="relatedsearch2" class="column"></div>
+                                <div id="relatedsearch3" class="column"></div>
                             </div>
-                            <div id="relatedsearch3"  class="column">
-                             
-                            </div>
-                          </div>
-                    </article>
+                        </article>
+                    </div>
+                    <div id ="poster" class="tile is-parent">
+                        <article class="tile is-child notification is-info">
+                            <p class="title"></p>
+                            <p class="subtitle"></p>
+                            <figure id="result" class="image is-10by13">
+                            </figure>
+                        </article>
+                    </div>
                 </div>
-                <div class="tile is-parent">
-                    <article class="tile is-child notification is-info">
-                        <p class="title"></p>
-                        <p class="subtitle"></p>
-                        <figure id="result" class="image is-10by13">
-                        </figure>
+                <div id="streaming" class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <p class="title">Streaming availability</p>
+                        <p class="subtitle">See where you can find your title streaming</p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
                     </article>
                 </div>
             </div>
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-danger">
-                    <p class="title">Streaming availability</p>
-                    <p class="subtitle">See where you can find your title streaming</p>
+            <div id ="stats" class="tile is-parent">
+                <article class="tile is-child notification is-success">
                     <div class="content">
-                        <!-- Content -->
+                        <p id="movietitle" class="title"></p>
+                        <h3 id="titleyear"></h3>
+                        <h4 id="actors"></h4>
+                        <p id="description" class="subtitle"></p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
                     </div>
                 </article>
             </div>
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child notification is-success">
-                <div class="content">
-                    <p id="movietitle" class="title"></p>
-                    <h3 id="titleyear">Year</h3>
-                    <h4 id="actors"></h4>
-                    <p id="description" class="subtitle"></p>
-                    <div class="content">
-                        <!-- Content -->
-                    </div>
-                </div>
-            </article>
-        </div>
+        <div id="result"></div>
     </div>
-    <div id="result"></div>
 </div>
 
 <body>
