@@ -1,37 +1,23 @@
-var test = document.querySelector(".container");
-var userInputEl = document.getElementById("userInputEl");
-var searchField = document.getElementById("searchField");
-var searchBtn = document.getElementById("searchBtn");
+let containerDiv = document.getElementById("container")
+let searchBtn = document.getElementById("searchBtn")
+let data;
+let apiKey = "&apikey=a9fe69df";
+var userInput = document.querySelector('#userQuery')
 
-function getApi(userInput) {
-    var request = "http://www.omdbapi.com/?t=" + userInput + "&apikey=23c153c2";
-    fetch(request)
-    .then(function(response) {
-        console.log(response);
-         return response.json()
- 
-    })
-    
-    // .then(function(data) {
-    //    // var info = JSON.parse(this.response);
-    //     for (var i = 0; i < data.length; i++) {
-    //         var item = document.createElement("li")
-    //         item.textContent = data[i].title;
-    //         test.appendChild(item);
-    //     }
-    //     console.log(data)
-    // })
-}
+function callApi () {
+    var userSearchItem = userInput.value.trim()
+    console.log(userSearchItem)
+    var url = "http://www.omdbapi.com/?s=" + userSearchItem + apiKey
+    console.log(url)
+    $.get(url, function (apiData) {
+        console.log(apiData);
+        var title = apiData.Search[0].Title;
+        var year = apiData.Search[0].Year;
+        var imdburl = "https://www.imdb.com/title/ " + apiData.Search[0].imdbID+"/";
+        var posterimg = "https://www.imdb.com/title/" + apiData.Search[0].Poster
 
-
-
-function displaySearch(data) {
-    if (data.length === 0) {
-        test.textContent = "No search found.";
-        return;
+        document.getElementById('result').innerHTML="<h1>"+title+"</h1>"
+        
     }
-
-    
-}
-
-searchBtn.addEventListener("click", getApi);
+    )}
+searchBtn.addEventListener("click", callApi);

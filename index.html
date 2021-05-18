@@ -10,20 +10,18 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <title>Title</title>
 </head>
-<body>
-
-<div class="container">
-    <div id="searchField" class="field">
-        <label class="label">Label</label>
+<div id="container">
+    <div class="field">
+        <label class="label">Title Search</label>
         <div class="control">
-            <input id="userInputEl" class="input" type="text" placeholder="Text input">
+          <input id="userQuery" class="input" type="text" placeholder="Text input">
         </div>
-        <p class="help">This is a help text</p>
+        <button id="searchBtn" class="button">Search</button>
+        <p class="help">Enter the name of your title</p>
     </div>
-    <button id="searchBtn" class="button">Search</button>
-    <ul class="list"></ul>
+    <div id="result"></div>
 </div>
-
+<body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
