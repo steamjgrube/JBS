@@ -17,13 +17,19 @@
             <div class="tile is-vertical is-8">
                 <div class="tile">
                     <div class="tile is-parent is-vertical has-text-centered">
-                        <article class="tile is-child notification is-primary">
-                            <p class="title">Search</p>
-                            <label class="label">Title Search</label>
-                            <div class="control">
-                                <input id="userQuery" class="input" type="text" placeholder="Text input">
+                        <article id="querybox" class="tile is-child notification is-primary">
+                            <div class="columns is-centered">
+                                
+                                <div class="column">
+                                    <p class="title">Search</p>
+                                    <label class="label">Title Search</label>
+                                    <div class="control">
+                                        <input id="userQuery" class="input" type="text" placeholder="Text input">
+                                    </div>
+                                    <button id="searchBtn" class="button">Search</button>
+                                </div>
+                                
                             </div>
-                            <button id="searchBtn" class="button">Search</button>
                         </article>
                         <article id="related" class="tile is-child notification is-warning">
                             <p class="title">Related Searches</p>
@@ -35,7 +41,7 @@
                             </div>
                         </article>
                     </div>
-                    <div id ="poster" class="tile is-parent">
+                    <div id="poster" class="tile is-parent">
                         <article class="tile is-child notification is-info">
                             <p class="title"></p>
                             <p class="subtitle"></p>
@@ -54,7 +60,7 @@
                     </article>
                 </div>
             </div>
-            <div id ="stats" class="tile is-parent">
+            <div id="stats" class="tile is-parent">
                 <article class="tile is-child notification is-success">
                     <div class="content">
                         <p id="movietitle" class="title"></p>
@@ -78,6 +84,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/transition.js"></script>
 </body>
 
 </html>
