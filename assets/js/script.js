@@ -37,15 +37,7 @@ function callApi() {
         
     })
 
-
-    // function callApi2(imdbID) {
-    //     // let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
-    //     // console.log(imdbID)
-    //     // var url = `https://api.watchmode.com/v1/title/${movieID}/details/${apiKey}`
-    //     // document.getElementById('streaming').innerHTML = "<h1>" + url + "/h1>"
-        
-    //     // var url = "https://api.watchmode.com/v1/networks/" + apiKey
-    // }
+    
 
 
 
