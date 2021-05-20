@@ -33,26 +33,34 @@ function callApi() {
         document.getElementById('relatedsearch2').innerHTML = "<h1><a href=" + imdburl2 + "><img id='relatedimg' src=" + relatedSearch2 + "></a></h1>"
         document.getElementById('relatedsearch3').innerHTML = "<h1><a href=" + imdburl3 + "><img id='relatedimg' src=" + relatedSearch3 + "></a></h1>"
 
-        callApi2(apiData.Search[0].imdbID)
+        // callApi2(apiData.Search[0].imdbID)
         
     })
 
 
-    function callApi2(imdbID) {
-        let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
-        console.log(imdbID)
-        var url = `https://api.watchmode.com/v1/title/${movieID}/details/${apiKey}`
-        document.getElementById('streaming').innerHTML = "<h1>" + url + "/h1>"
+    // function callApi2(imdbID) {
+    //     // let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
+    //     // console.log(imdbID)
+    //     // var url = `https://api.watchmode.com/v1/title/${movieID}/details/${apiKey}`
+    //     // document.getElementById('streaming').innerHTML = "<h1>" + url + "/h1>"
         
-        // var url = "https://api.watchmode.com/v1/networks/" + apiKey
-    }
+    //     // var url = "https://api.watchmode.com/v1/networks/" + apiKey
+    // }
 
 
 
-    $.get(urlID, function (apiData) {
-        console.log(apiData)
+    $.get(url, function (apiData) {
+        let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
         var movieID = apiData.imdbID;
-        console.log(movieID)
+        var url = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`
+        document.getElementById('streaming-section').innerHTML = `<a href=${url}>Click here </a>`
+        console.log(apiData)
+        console.log(url)
+        var data = apiData.title_results.id
+        // console.log(imdbID)
+        var tId = data.id
+        console.log(data)
+        // console.log(movieID)
     })
 
 
@@ -77,7 +85,6 @@ function callApi() {
 
         document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
     })
-    return imdbID
 }
 searchBtn.addEventListener("click", callApi);
 userInput.addEventListener("keyup", function (event) {
