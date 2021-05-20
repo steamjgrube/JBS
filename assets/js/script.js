@@ -14,7 +14,7 @@ function callApi() {
     console.log(url)
     $.get(url, function (apiData) {
         var data = apiData.Search[0]
-        console.log(apiData);
+        // console.log(apiData);
         var title = apiData.Search[0].Title;
         var year = apiData.Search[0].Year;
         var imdburl = "https://www.imdb.com/title/ " + apiData.Search[0].imdbID + "/";
@@ -35,11 +35,52 @@ function callApi() {
 
         // callApi2(apiData.Search[0].imdbID)
         
+    }) 
+
+    $.get(urlPlot, function (apiData) {
+        // console.log(apiData);
+        var plot = apiData.Plot;
+        var actors = apiData.Actors;
+
+        console.log(plot)
+        document.getElementById('description').innerHTML = "<p>" + plot + "</p>"
+        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
     })
+    $.get(urlActors, function (apiData) {
+        // console.log(apiData);
+        var actors = apiData.Actors;
+
+        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
+    })
+    $.get(urlActors, function (apiData) {
+        // console.log(apiData);
+        var actors = apiData.Actors;
+
+        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
+    }).then (function (wmData){
+        let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
+        data = wmData
+        console.log(wmData);
+        var url2 = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`;
+        console.log(url2)
+        return fetch(url2)
+    }).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return Promise.reject(response);
+        }
+    }).then(function (userData) {
+        console.log(userData);
+    }).catch(function (error) {
+        console.warn(error);
+    });
+
+    
 
 
     // function callApi2(imdbID) {
-    //     // let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
+    
     //     // console.log(imdbID)
     //     // var url = `https://api.watchmode.com/v1/title/${movieID}/details/${apiKey}`
     //     // document.getElementById('streaming').innerHTML = "<h1>" + url + "/h1>"
@@ -49,42 +90,22 @@ function callApi() {
 
 
 
-    $.get(url, function (apiData) {
-        let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
-        var movieID = apiData.imdbID;
-        var url = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`
-        document.getElementById('streaming-section').innerHTML = `<a href=${url}>Click here </a>`
-        console.log(apiData)
-        console.log(url)
-        var data = apiData.title_results.id
-        // console.log(imdbID)
-        var tId = data.id
-        console.log(data)
-        // console.log(movieID)
-    })
+    // $.get(url, function (wmData) {
+    //     let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
+    //     var movieID = wmData.imdbID;
+    //     var url = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`
+    //     document.getElementById('streaming-section').innerHTML = `<a href=${url}>Click here </a>`
+    //     console.log(wmData)
+    //     console.log(url)
+    //     var data = apiData.title_results.id
+    //     // console.log(imdbID)
+    //     var tId = data.id
+    //     console.log(data)
+    //     // console.log(movieID)
+    // })
 
 
-    $.get(urlPlot, function (apiData) {
-        console.log(apiData);
-        var plot = apiData.Plot;
-        var actors = apiData.Actors;
 
-        console.log(plot)
-        document.getElementById('description').innerHTML = "<p>" + plot + "</p>"
-        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
-    })
-    $.get(urlActors, function (apiData) {
-        console.log(apiData);
-        var actors = apiData.Actors;
-
-        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
-    })
-    $.get(urlActors, function (apiData) {
-        console.log(apiData);
-        var actors = apiData.Actors;
-
-        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
-    })
 }
 searchBtn.addEventListener("click", callApi);
 userInput.addEventListener("keyup", function (event) {
