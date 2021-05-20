@@ -14,7 +14,7 @@ function callApi() {
     console.log(url)
     $.get(url, function (apiData) {
         var data = apiData.Search[0]
-        // console.log(apiData);
+        console.log(apiData);
         var title = apiData.Search[0].Title;
         var year = apiData.Search[0].Year;
         var imdburl = "https://www.imdb.com/title/ " + apiData.Search[0].imdbID + "/";
@@ -76,6 +76,10 @@ function callApi() {
         console.warn(error);
     });
 
+    $.get(url2, function(wmData){
+        var wmId = wmData.title_results[0].id
+        console.log(wmId);
+    })
     
 
 
