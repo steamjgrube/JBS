@@ -34,9 +34,10 @@
                                             <p class="title">Search</p>
                                             <label class="label">Title Search</label>
                                             <div class="control">
-                                                <input id="userQuery" class="input" type="text" placeholder="Text input">
+                                                <input id="userQuery" class="input" type="text" placeholder="Text input" list="searchinfo">
                                             </div>
                                             <button id="searchBtn" class="button">Search</button>
+                                            <datalist id="searchinfo"></datalist>
                                         </div>
                                         
                                     </div>
@@ -60,10 +61,33 @@
                         </div>
                         <div id="streaming" class="tile is-parent">
                             <article class="tile is-child notification is-link">
-                                <p class="title">Streaming availability</p>
-                                <p class="subtitle">See where you can find your title streaming</p>
-                                <div id="streaming-section" class="content">
-                                    <!-- Content -->
+                                <div id="streaming-section" class="content is-centered">
+                                    <nav class="columns is-centered is-vcentered">
+                                        <div class="level-item has-text-centered">
+                                          <div class="column">
+                                            <p class="heading">Critic Score</p>
+                                            <p class="title" id="critic-score"></p>
+                                          </div>
+                                        </div>
+                                        <div class="level-item has-text-centered">
+                                          <div class="column">
+                                            <p class="heading">Ratings</p>
+                                            <p class="title" id="rating"></p>
+                                          </div>
+                                        </div>
+                                        <div class="level-item has-text-centered">
+                                          <div class="column">
+                                            <p class="heading">Runtime</p>
+                                            <p class="title" id="run-time"></p>
+                                          </div>
+                                        </div>
+                                        <div class="level-item has-text-centered">
+                                            <div class="column is-vcentered">
+                                              <p class="heading">Release Date</p>
+                                              <p class="title" id="release-date"></p>
+                                            </div>
+                                          </div>
+                                      </nav>
                                 </div>
                             </article>
                         </div>
