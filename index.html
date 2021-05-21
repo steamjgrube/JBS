@@ -10,76 +10,87 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>Title</title>
+<title>JBS Movie Search</title>
 </head>
-<div class="hero-body">
-    <div id="container">
-        <div class="tile is-ancestor">
-            <div class="tile is-vertical">
-                <div class="tile">
-                    <div class="tile is-parent is-vertical has-text-centered">
-                        <article id="querybox" class="tile is-child notification is-primary">
-                            <div class="columns is-centered is-fullheight">
-                                
-                                <div class="column">
-                                    <p class="title">Search</p>
-                                    <label class="label">Title Search</label>
-                                    <div class="control">
-                                        <input id="userQuery" class="input" type="text" placeholder="Text input">
-                                    </div>
-                                    <button id="searchBtn" class="button">Search</button>
-                                </div>
-                                
-                            </div>
-                        </article>
-                        <article id="related" class="tile is-child notification is-warning">
-                            <p class="title">Related Searches</p>
-                            <p class="subtitle">Titles related to your search</p>
-                            <div class="columns">
-                                <div id="relatedsearch" class="column"></div>
-                                <div id="relatedsearch2" class="column"></div>
-                                <div id="relatedsearch3" class="column"></div>
-                            </div>
-                        </article>
-                    </div>
-                    <div id="poster" class="tile is-parent">
-                        <article class="tile is-child notification is-info">
-                            <p class="title"></p>
-                            <p class="subtitle"></p>
-                            <figure id="result" class="image is-10by13">
-                            </figure>
-                        </article>
-                    </div>
-                </div>
-                <div id="streaming" class="tile is-parent">
-                    <article class="tile is-child notification is-danger">
-                        <p class="title">Streaming availability</p>
-                        <p class="subtitle">See where you can find your title streaming</p>
-                        <div id="streaming-section" class="content">
-                            <!-- Content -->
-                        </div>
-                    </article>
-                </div>
+<body>
+    <header>
+        <section class="hero is-small has-background-link-dark is-link">
+            <div class="hero-body">
+            <p class="title">JBS Movie Search</p>
             </div>
-            <div id="stats" class="tile is-parent">
-                <article class="tile is-child notification is-success">
-                    <div class="content">
-                        <p id="movietitle" class="title"></p>
-                        <h3 id="titleyear"></h3>
-                        <h4 id="actors"></h4>
-                        <p id="description" class="subtitle"></p>
-                        <div class="content">
-                            <!-- Content -->
+        </section>
+    </header>
+    <div class="main">
+        <div id="search" class="hero-body has-background-light">
+            <div id="container">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical has-text-centered">
+                                <article id="querybox" class="tile is-child notification is-info">
+                                    <div class="columns is-centered">
+                                        
+                                        <div class="column is-8">
+                                            <p class="title">Search</p>
+                                            <label class="label">Title Search</label>
+                                            <div class="control">
+                                                <input id="userQuery" class="input" type="text" placeholder="Text input">
+                                            </div>
+                                            <button id="searchBtn" class="button">Search</button>
+                                        </div>
+                                        
+                                    </div>
+                                </article>
+                                <article id="related" class="tile is-child notification is-link">
+                                    <p class="title">Related Searches</p>
+                                    <p class="subtitle">Titles related to your search</p>
+                                    <div class="columns">
+                                        <div id="relatedsearch" class="column"></div>
+                                        <div id="relatedsearch2" class="column"></div>
+                                        <div id="relatedsearch3" class="column"></div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div id="poster" class="tile is-parent">
+                                <article class="tile is-child notification is-link">
+                                    <figure id="result" class="image is-10by13">
+                                    </figure>
+                                </article>
+                            </div>
+                        </div>
+                        <div id="streaming" class="tile is-parent">
+                            <article class="tile is-child notification is-link">
+                                <p class="title">Streaming availability</p>
+                                <p class="subtitle">See where you can find your title streaming</p>
+                                <div id="streaming-section" class="content">
+                                    <!-- Content -->
+                                </div>
+                            </article>
                         </div>
                     </div>
-                </article>
+                    <div id="stats" class="tile is-parent">
+                        <article class="tile is-child notification is-link">
+                            <div class="content">
+                                <h1 id="movietitle" class="title has-text-white"></h1>
+                                <h4 id="titleyear"></h4>
+                                <h4 id="actors"></h4>
+                                <p id="description" class="subtitle"></p>
+                                <div class="content">
+                                    <!-- Content -->
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div id="result"></div>
             </div>
         </div>
-        <div id="result"></div>
     </div>
-</div>
-
-<body>
+    <footer>
+        <div class="content has-text-centered">
+          <p><strong>JBS</strong> © 2021</p>
+        </div>
+      </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
