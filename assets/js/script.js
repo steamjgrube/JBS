@@ -35,29 +35,10 @@ function callApi() {
 
         // callApi2(apiData.Search[0].imdbID)
         
-    })
-
-    
-
-
-
-    $.get(url, function (apiData) {
-        let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
-        var movieID = apiData.imdbID;
-        var url = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`
-        document.getElementById('streaming-section').innerHTML = `<a href=${url}>Click here </a>`
-        console.log(apiData)
-        console.log(url)
-        var data = apiData.title_results.id
-        // console.log(imdbID)
-        var tId = data.id
-        console.log(data)
-        // console.log(movieID)
-    })
-
+    }) 
 
     $.get(urlPlot, function (apiData) {
-        console.log(apiData);
+        // console.log(apiData);
         var plot = apiData.Plot;
         var actors = apiData.Actors;
 
@@ -66,17 +47,69 @@ function callApi() {
         document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
     })
     $.get(urlActors, function (apiData) {
-        console.log(apiData);
+        // console.log(apiData);
         var actors = apiData.Actors;
 
         document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
     })
     $.get(urlActors, function (apiData) {
-        console.log(apiData);
+        // console.log(apiData);
         var actors = apiData.Actors;
 
         document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
-    })
+    }).then (function (wmData){
+        let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
+        data = wmData
+        console.log(wmData);
+        var url2 = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`;
+        console.log(url2)
+        return fetch(url2)
+    }).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return Promise.reject(response);
+        }
+    }).then(function (userData) {
+        console.log(userData);
+    }).catch(function (error) {
+        console.warn(error);
+    });
+
+    // $.get(url2, function(wmData){
+    //     var wmId = wmData.title_results[0].id
+    //     console.log(wmId);
+    // })
+    
+
+
+    // function callApi2(imdbID) {
+    
+    //     // console.log(imdbID)
+    //     // var url = `https://api.watchmode.com/v1/title/${movieID}/details/${apiKey}`
+    //     // document.getElementById('streaming').innerHTML = "<h1>" + url + "/h1>"
+        
+    //     // var url = "https://api.watchmode.com/v1/networks/" + apiKey
+    // }
+
+
+
+    // $.get(url, function (wmData) {
+    //     let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
+    //     var movieID = wmData.imdbID;
+    //     var url = `https://api.watchmode.com/v1/search/${apiKey}&search_field=name&search_value=${userSearchItem}`
+    //     document.getElementById('streaming-section').innerHTML = `<a href=${url}>Click here </a>`
+    //     console.log(wmData)
+    //     console.log(url)
+    //     var data = apiData.title_results.id
+    //     // console.log(imdbID)
+    //     var tId = data.id
+    //     console.log(data)
+    //     // console.log(movieID)
+    // })
+
+
+
 }
 searchBtn.addEventListener("click", callApi);
 userInput.addEventListener("keyup", function (event) {
