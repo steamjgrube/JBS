@@ -26,9 +26,9 @@ function callApi() {
         var imdburl2 = "https://www.imdb.com/title/" + apiData.Search[2].imdbID + "/";
         var imdburl3 = "https://www.imdb.com/title/" + apiData.Search[3].imdbID + "/";
 
-        document.getElementById('movietitle').innerHTML = "<h1>" + title + "</h1><br><br>"
+        document.getElementById('movietitle').innerHTML = "<h1>" + title + "</h1><br>"
         document.getElementById('result').innerHTML = "<h2><img src=" + posterimg + "></h2>"
-        document.getElementById('titleyear').innerHTML = "<h1>" + year + "</h1>"
+        document.getElementById('titleyear').innerHTML = "<h4>" + year + "</h4>"
         document.getElementById('relatedsearch').innerHTML = "<h1><a href=" + imdburl1 + "><img id='relatedimg' src=" + relatedSearch + "></a></h1>"
         document.getElementById('relatedsearch2').innerHTML = "<h1><a href=" + imdburl2 + "><img id='relatedimg' src=" + relatedSearch2 + "></a></h1>"
         document.getElementById('relatedsearch3').innerHTML = "<h1><a href=" + imdburl3 + "><img id='relatedimg' src=" + relatedSearch3 + "></a></h1>"
@@ -44,19 +44,19 @@ function callApi() {
 
         console.log(plot)
         document.getElementById('description').innerHTML = "<p>" + plot + "</p>"
-        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
+        document.getElementById('actors').innerHTML = "<h4>" + actors+ "</h4>"
     })
     $.get(urlActors, function (apiData) {
         // console.log(apiData);
         var actors = apiData.Actors;
 
-        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
+        document.getElementById('actors').innerHTML = "<h3>" +actors+ "</h3>"
     })
     $.get(urlActors, function (apiData) {
         // console.log(apiData);
         var actors = apiData.Actors;
 
-        document.getElementById('actors').innerHTML = "<h1>" + actors + "</h1>"
+        document.getElementById('actors').innerHTML = "<h1>" +actors+ "</h1>"
     }).then (function (wmData){
         let apiKey = "?apiKey=4e2LIzHaotnbVkEZLfUoV3TChv5R5kP51ljjJLpo"
         data = wmData
