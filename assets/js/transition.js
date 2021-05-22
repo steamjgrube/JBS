@@ -12,9 +12,9 @@ $(document).ready(function() {
 })
 $(document).ready(function() {
     $('#searchBtn').on('click', function () {
-        $('#streaming').toggle();
-        $('#stats').toggle();
-        $('#poster').toggle();
-        $('#related').toggle();
+        $('#streaming').show();
+        $('#stats').show();
+        $('#poster').show();
+        $('#related').show();
     })
 })
