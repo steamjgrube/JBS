@@ -3,43 +3,52 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>JBS Movie Search</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>JBS Movie Search</title>
 </head>
+
 <body>
     <header>
-        <section class="hero is-small has-background-link-dark is-link">
+        <section id="headerRow" class="hero is-small">
             <div class="hero-body">
-            <p class="title">JBS Movie Search</p>
+                <p class="title">Watch Hub<button onclick="location.href='https://github.com/steamjgrube/JBS'"   id="gitlink" class="button is-link">Github</button></p>
             </div>
         </section>
     </header>
-    <div class="main">
-        <div id="search" class="hero-body has-background-light">
+    <section id="emptyhero" class="hero">
+        <div class="hero-body">
+            <div class="">
+            </div>
+        </div>
+    </section>
+    <div class="hero has-text-centered">
+        <div id="search" class="hero-body">
             <div id="container">
                 <div class="tile is-ancestor">
                     <div class="tile is-vertical">
                         <div class="tile">
                             <div class="tile is-parent is-vertical has-text-centered">
-                                <article id="querybox" class="tile is-child notification is-info">
+                                <article id="querybox" class="tile is-child notification is-link">
                                     <div class="columns is-centered">
-                                        
+
                                         <div class="column is-8">
-                                            <p class="title">Search</p>
+                                            <!-- <p class="title">Search</p> -->
                                             <label class="label">Title Search</label>
                                             <div class="control">
-                                                <input id="userQuery" class="input" type="text" placeholder="Text input" list="searchinfo">
+                                                <input id="userQuery" class="input" type="text" placeholder="Search for your title here!"
+                                                    list="searchinfo">
                                             </div>
+                                            <br>
                                             <button id="searchBtn" class="button">Search</button>
                                             <datalist id="searchinfo"></datalist>
                                         </div>
-                                        
+
                                     </div>
                                 </article>
                                 <article id="related" class="tile is-child notification is-link">
@@ -64,30 +73,30 @@
                                 <div id="streaming-section" class="content is-centered">
                                     <nav class="columns is-centered is-vcentered">
                                         <div class="level-item has-text-centered">
-                                          <div class="column">
-                                            <p class="heading">Critic Score</p>
-                                            <p class="title" id="critic-score"></p>
-                                          </div>
+                                            <div class="column">
+                                                <p class="heading">Critic Score</p>
+                                                <p class="title" id="critic-score"></p>
+                                            </div>
                                         </div>
                                         <div class="level-item has-text-centered">
-                                          <div class="column">
-                                            <p class="heading">Ratings</p>
-                                            <p class="title" id="rating"></p>
-                                          </div>
+                                            <div class="column">
+                                                <p class="heading">Ratings</p>
+                                                <p class="title" id="rating"></p>
+                                            </div>
                                         </div>
                                         <div class="level-item has-text-centered">
-                                          <div class="column">
-                                            <p class="heading">Runtime</p>
-                                            <p class="title" id="run-time"></p>
-                                          </div>
+                                            <div class="column">
+                                                <p class="heading">Runtime</p>
+                                                <p class="title" id="run-time"></p>
+                                            </div>
                                         </div>
                                         <div class="level-item has-text-centered">
                                             <div class="column is-vcentered">
-                                              <p class="heading">Release Date</p>
-                                              <p class="title" id="release-date"></p>
+                                                <p class="heading">Release Date</p>
+                                                <p class="title" id="release-date"></p>
                                             </div>
-                                          </div>
-                                      </nav>
+                                        </div>
+                                    </nav>
                                 </div>
                             </article>
                         </div>
@@ -97,8 +106,8 @@
                             <div class="content">
                                 <h1 id="movietitle" class="title has-text-white"></h1>
                                 <h4 id="titleyear"></h4>
-                                <h4 id="actors"></h4>
-                                <p id="description" class="subtitle"></p>
+                                <h4 id="actors" class="is-family-monospace"></h4>
+                                <p id="description" class="subtitle has-text-weight-semibold"></p>
                                 <div class="content">
                                     <!-- Content -->
                                 </div>
@@ -112,9 +121,9 @@
     </div>
     <footer>
         <div class="content has-text-centered">
-          <p><strong>JBS</strong> © 2021</p>
+            <p><strong>Watch Hub</strong> © 2021</p>
         </div>
-      </footer>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

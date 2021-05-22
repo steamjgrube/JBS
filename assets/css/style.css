@@ -1,11 +1,15 @@
 html {
-    background-color: lightgray;
+    background-color: rgb(90, 90, 88)
 }
 
-header {
+#headerRow {
+    background-color: #3273dc;
     position: fixed;
     width: 100%;
     z-index: 10;
+}
+#gitlink {
+    float: right;
 }
 
 h1 {
@@ -15,12 +19,19 @@ h1 {
 .main {
     padding-top: 55px;
 }
+#actors {
+    text-align: left;
+    font-size: small;
+}
 
 .title {
     text-align: center;
 }
 .subtitle {
     text-align: center;
+}
+#search {
+    background-color: rgb(90, 90, 88)
 }
 
 footer {
