@@ -24,6 +24,8 @@ function callApi() {
     var relatedSearch = apiData.Search[1].Poster;
     var relatedSearch2 = apiData.Search[2].Poster;
     var relatedSearch3 = apiData.Search[3].Poster;
+    var mainImdb = 
+      "https://www.imdb.com/title/" + apiData.Search[0].imdbID + "/";
     var imdburl1 =
       "https://www.imdb.com/title/" + apiData.Search[1].imdbID + "/";
     var imdburl2 =
@@ -34,25 +36,29 @@ function callApi() {
     document.getElementById("movietitle").innerHTML =
       "<h1>" + title + "</h1>";
     document.getElementById("result").innerHTML =
-      "<h2><img src=" + posterimg + "></h2>";
+    '<h1><a target="_blank" href=' +
+    mainImdb +
+    '><img src=' +
+    posterimg +
+    '></a></h1>';
     document.getElementById("relatedsearch").innerHTML =
-      "<h1><a href=" +
+      '<h1><a target="_blank" href=' +
       imdburl1 +
-      "><img id='relatedimg' src=" +
+      '><img id="relatedimg" src=' +
       relatedSearch +
-      "></a></h1>";
+      '></a></h1>';
     document.getElementById("relatedsearch2").innerHTML =
-      "<h1><a href=" +
+      '<h1><a target="_blank" href=' +
       imdburl2 +
-      "><img id='relatedimg' src=" +
+      '><img id="relatedimg" src=' +
       relatedSearch2 +
-      "></a></h1>";
+      '></a></h1>';
     document.getElementById("relatedsearch3").innerHTML =
-      "<h1><a href=" +
+      '<h1><a target="_blank" href=' +
       imdburl3 +
-      "><img id='relatedimg' src=" +
+      '><img id="relatedimg" src=' +
       relatedSearch3 +
-      "></a></h1>";
+      '></a></h1>';
   });
 
   $.get(urlPlot, function (apiData) {
